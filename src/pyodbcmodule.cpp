@@ -307,7 +307,7 @@ static bool AllocateEnv()
     if (PyObject_TypeCheck(odbcversion, &PyUnicode_Type)) {
         if (PyUnicode_CompareWithASCIIString(odbcversion, "3.8") == 0)
         {
-            defaultVersion = (SQLPOINTER)SQL_OV_ODBC3_80;
+            defaultVersion = (SQLPOINTER)SQL_OV_ODBC3;
         }
     }
     Py_DECREF(odbcversion);
@@ -1074,7 +1074,7 @@ static const ConstantDef aConstants[] = {
     MAKECONST(SQL_CONVERT_DECIMAL),
     MAKECONST(SQL_CONVERT_DOUBLE),
     MAKECONST(SQL_CONVERT_FLOAT),
-    MAKECONST(SQL_CONVERT_GUID),
+    //    MAKECONST(SQL_CONVERT_GUID),
     MAKECONST(SQL_CONVERT_INTEGER),
     MAKECONST(SQL_CONVERT_INTERVAL_DAY_TIME),
     MAKECONST(SQL_CONVERT_INTERVAL_YEAR_MONTH),

@@ -78,8 +78,8 @@ def get_compiler_settings():
     settings = {
         'extra_compile_args': [],
         'extra_link_args': [],
-        'libraries': [],
-        'include_dirs': [],
+        'libraries': ['iodbc'],
+        'include_dirs': ['/usr/include/iodbc'],
         'define_macros': [('PYODBC_VERSION', VERSION)]
     }
 
@@ -170,7 +170,7 @@ def get_compiler_settings():
             settings['extra_link_args'].extend(ldflags.split())
 
         # What is the proper way to detect iODBC, MyODBC, unixODBC, etc.?
-        settings['libraries'].append('odbc')
+        settings['libraries'].append('iodbc')
 
     return settings
 
